@@ -1,8 +1,8 @@
 package Strings;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 class Pairs{
 	int a;
@@ -28,31 +28,32 @@ public class CheckPairs {
 		}
 		return pair;
 	}
-	public static Pairs checkPairHashMapMethod(int[] arr,int sum){
-		List<Integer> arrayList=new ArrayList<>();
-		Pairs pair=new Pairs();
-		for(int i=0;i<arr.length;i++){
-			arrayList.add(arr[i]);
-		}
+	public static int countPairHashMapMethod(int[] arr,int sum){
+		//List<Integer> arrayList=new ArrayList<>();
+		//Pairs pair=new Pairs();
+		Map<Integer,Integer> pairs=new HashMap<>();
+		int count=0;
 		
 		for(int i=0;i<arr.length;i++){
-			if(arrayList.contains(sum-arr[i])){
-				System.out.println(arr[i] + "," + (sum-arr[i]));
-				pair.a=arr[i];pair.b=arrayList.lastIndexOf(sum-arr[i]);
-				break;
+			if(pairs.containsKey(arr[i])){
+				count++;
+				System.out.println(arr[i]+","+pairs.get(arr[i]));
+				pairs.remove(arr[i]);
+			}else{
+				pairs.put(sum-arr[i], arr[i]);
 			}
 		}
 		
-		return pair;
+		return count;
 	}
 	
 	public static void main(String[] args) {
-		int[] A={1,4,45,6,10,-8};
+		int[] A={1,4,45,6,10,-8,-8,10};
 		//Pairs pairs=checkPairSortingMethod(A, 2);
-		Pairs pairs=checkPairHashMapMethod(A, 2);
-		if(pairs!=null)
+		System.out.println("No. of Pairs are "+countPairHashMapMethod(A, 2));
+		/*if(pairs!=null)
 			System.out.println("Pairs are "+pairs.a+","+pairs.b);
 		else
 			System.out.println("No pairs found");
-	}
+	*/}
 }
