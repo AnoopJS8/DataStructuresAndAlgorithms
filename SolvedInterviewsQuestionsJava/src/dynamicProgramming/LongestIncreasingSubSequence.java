@@ -13,7 +13,7 @@ public class LongestIncreasingSubSequence {
 		for(int i=1;i<arr.length;i++){
 			for(int j=0;j<i;j++){
 				if(arr[j]<arr[i]){
-					T[i]=Math.max(T[j], T[j]+1);
+					T[i]=Math.max(T[i], T[j]+1);
 				}
 			}
 		}
