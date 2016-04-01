@@ -3,6 +3,14 @@ package dynamicProgramming;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * LCS[i...j]=longest common subsequence in X[1..i] & Y[1..j]
+ * LCS[i...j]= 0 if i==0||j==0
+ * 			 = LCS[i-1,j-1]+1 ,if X[i]==Y[j]
+ * 			 =Max(LCS[i-1,j],LCS[i,j-1]),if X[i]!=Y[j]
+ * 
+ * */
+
 public class LongestCommonSubSequence {
 	
 	public static int lcsDynamic(char str1[],char str2[]){
