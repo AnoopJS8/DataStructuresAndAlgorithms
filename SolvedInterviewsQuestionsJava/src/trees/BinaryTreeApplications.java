@@ -62,9 +62,13 @@ public class BinaryTreeApplications {
 		//InorderSuccessor ios=new InorderSuccessor();
 		//System.out.println(ios.inorderSuccessor(binaryTree.root, 10));//This wont work as the given tree is not bst
 		
-		UtilityFunctions uf=new UtilityFunctions();
+		///UtilityFunctions uf=new UtilityFunctions();
 		//System.out.println(uf.minimumHeight(binaryTree.root));
-		System.out.println(uf.maxPathSum(binaryTree.root));
+		///System.out.println(uf.maxPathSum(binaryTree.root));
+		TreeTraversals tv=new TreeTraversals();
+		tv.inOrder(binaryTree.root);
+		System.out.println();
+		tv.inOrderIterative(binaryTree.root);
 	}
 	
 	
