@@ -36,7 +36,7 @@ public class TreeTraversals {
 			return;
 		}
 		Stack<Node> stck=new Stack<>();
-		stck.push(root);
+		stck.push(current);
 		while(!stck.isEmpty()&&current!=null){
 			if(current.left!=null){
 				current=current.left;
