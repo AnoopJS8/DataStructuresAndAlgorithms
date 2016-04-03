@@ -73,6 +73,30 @@ public class TreeTraversals {
 	
 	}
 	
+		public void postOrderIterative(Node root) {
+
+		if (root == null) {
+			return;
+		}
+		Stack<Node> stck1 = new Stack<>();
+		Stack<Node> stck2 = new Stack<>();
+		Node current = root;
+		stck1.push(current);
+		while (!stck1.isEmpty()) {
+			current = stck1.pop();
+			stck2.push(current);
+			if (current.left != null) {
+				stck1.push(current.left);	
+			}
+			if (current.right != null) {
+				stck1.push(current.right);
+			}
+		}
+		while(!stck2.isEmpty()){
+			System.out.print(stck2.pop().key+" ");
+		}
+
+	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

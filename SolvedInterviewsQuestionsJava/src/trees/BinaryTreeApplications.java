@@ -73,6 +73,12 @@ public class BinaryTreeApplications {
 		tv.preOrder(binaryTree.root);
 		System.out.println();
 		tv.preOrderIterative(binaryTree.root);
+		System.out.println();
+		tv.postOrder(binaryTree.root);
+		System.out.println();
+		tv.postOrderIterative(binaryTree.root);
+		
+		
 	}
 	
 	
