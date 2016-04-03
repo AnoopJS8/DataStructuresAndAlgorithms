@@ -52,6 +52,26 @@ public class TreeTraversals {
 		}
 		
 	}
+
+	public void preOrderIterative(Node root){
+		Node current=root;
+		if(current==null){
+			return;
+		}
+		Stack<Node> stck=new Stack<>();
+		stck.push(current);
+		while(!stck.isEmpty()){
+			Node top=stck.pop();
+			System.out.print(top.key+" ");
+			if(top.right!=null){
+				stck.push(top.right);
+			}
+			if(top.left!=null){
+				stck.push(top.left);
+			}
+		}
+	
+	}
 	
 	
 	public static void main(String[] args) {
