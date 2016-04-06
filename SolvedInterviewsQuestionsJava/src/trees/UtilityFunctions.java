@@ -160,4 +160,17 @@ public class UtilityFunctions {
 		
 	}
 	
+	public Node invertTree(Node root){
+		if(root==null)
+			return root;
+		Node swap;
+		root.left=invertTree(root.left);
+		root.right=invertTree(root.right);
+		swap=root.left;
+		root.left=root.right;
+		root.right=swap;
+		return root;
+		
+	}
+	
 }
