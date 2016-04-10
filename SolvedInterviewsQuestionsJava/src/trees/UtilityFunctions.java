@@ -173,4 +173,14 @@ public class UtilityFunctions {
 		
 	}
 	
+	public boolean isBalanced(Node root){
+		if(root==null){
+			return true; //Empty Tree is a balanced tree
+		}
+		int leftHeight=height(root.left);
+		int rightHeight=height(root.right);
+		
+		return (Math.abs(leftHeight-rightHeight)<=1) && isBalanced(root.left) && isBalanced(root.right);
+	}
+	
 }
