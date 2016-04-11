@@ -30,6 +30,21 @@ class DoublyLinkedList{
 			head=newNode;
 		}
 	}
+
+	public void removeDNode(int x){
+		DNode search=this.head;
+		while(search!=null && search.data!=x){
+			search=search.next;
+		}
+		//System.out.println(search.data);
+		if(this.head==search){
+			search.next.prev=search.prev;
+			head=search.next;
+		}else if(search!=null){
+			search.prev.next=search.next;
+		}
+	}
+
 	public void printAll(){
 		DNode temp=this.head;
 		while(temp!=null){
